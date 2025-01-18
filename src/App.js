@@ -1,21 +1,22 @@
-import About from "./components/About";
+import { Routes, Route } from "react-router-dom";
+import AboutSection from "./components/AboutSection";
+import ProjectCard from "./components/ProjectCard";
+import SkillCard from "./components/SkillCard"
 import Contact from "./components/Contact";
-import Experience from "./components/Experience";
-import Home from "./components/Home";
-import NavBar from "./components/NavBar";
-import Portfolio from "./components/Portfolio";
-import SocialLinks from "./components/SocialLinks";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+
 function App() {
   return (
     <div>
-      <NavBar />
-      <Home />
-      <About />
-      <Portfolio />
-      <Experience />
-      <Contact />
-      
-      <SocialLinks />
+      <Header />
+      <Routes>
+        <Route path="/" element={<AboutSection />} />
+        <Route path="/projects" element={<ProjectCard />} />
+        <Route path="/experience" element={<SkillCard />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
