@@ -116,9 +116,9 @@ const Experience = () => {
   return (
     <div
       name="experience"
-      className="bg-gradient-to-b from-black to-gray-800 w-full"
+      className="dark:bg-gray-900 dark:text-white w-full"
     >
-      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div>
           <h2 className="text-4xl font-bold p-2 inline">Experience</h2>
           <p className="py-6">These are technologies I've worked with</p>
@@ -128,7 +128,7 @@ const Experience = () => {
           {techs.map(({ id, src, title, proficiencyLevel, proficiency, style }) => (
             <div
               key={id}
-              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style} flex flex-col justify-between h-52`}
+              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style} dark:hover:bg-slate-900 flex flex-col justify-between h-52`}
             >
               {/* Image */}
               <img src={src} alt={title} className="w-20 h-20 mx-auto object-contain" />
@@ -149,10 +149,10 @@ const Experience = () => {
                     backgroundColor:
                       proficiency === 100
                         ? "green"
-                        : proficiency >= 80
+                        : proficiency >= 75
                         ? "blue"
                         : proficiency >= 50
-                        ? "yellow"
+                        ? "orange"
                         : "red",
                   }}
                 ></div>

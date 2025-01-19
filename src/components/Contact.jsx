@@ -35,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <div name="contact" className='w-full bg-gradient-to-b from-black to-gray-800 text-white'>
+    <div name="contact" className='w-full dark:bg-gray-900 dark:text-white'>
       <div className='flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full'>
         <div className='pb-8'>
           <h2 className='text-4xl font-bold inline'>Contact</h2>
@@ -56,7 +56,7 @@ const Contact = () => {
               onChange={(e) => setName(e.target.value)}
               placeholder='Enter your name'
               required
-              className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'
+              className='p-2 bg-transparent border-2 rounded-md text-gray-800 dark:text-white focus:outline-none'
             />
             <input
               type="email"
@@ -65,7 +65,7 @@ const Contact = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder='Enter your email'
               required
-              className='my-4 p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'
+              className='my-4 p-2 bg-transparent border-2 rounded-md text-gray-800 dark:text-white focus:outline-none'
             />
             <textarea
               name="message"
@@ -75,7 +75,7 @@ const Contact = () => {
               placeholder='Type a message...'
               maxLength={500}
               required
-              className='p-2 bg-transparent border-2 rounded-md text-white focus:outline-none'
+              className='p-2 bg-transparent border-2 rounded-md text-gray-800 dark:text-white focus:outline-none'
             ></textarea>
             
             {error && <p className="text-red-500 mt-2">{error}</p>}

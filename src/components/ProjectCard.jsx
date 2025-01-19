@@ -114,7 +114,7 @@ const Portfolio = () => {
   }, []); // Empty dependency array ensures the effect runs only once
 
   return (
-    <div name="portfolio" className="bg-gradient-to-b from-black to-gray-800 w-full text-white">
+    <div name="portfolio" className="dark:bg-gray-900 dark:text-white w-full">
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
           <h2 className="text-4xl font-bold inline">Portfolio</h2>
@@ -153,19 +153,19 @@ const Portfolio = () => {
 
         <div className="pb-8 mt-14">
           <h2 className="text-4xl font-bold inline">Recent GitHub Repositories</h2>
-          <p className="py-6">Here are some of my recent GitHub repositories:</p>
+          <p className="py-6">Here are some of my recent GitHub repositories:-</p>
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
           {/* Display recent GitHub repositories */}
           {repos.map((repo) => (
-            <div key={repo.id} className="shadow-md shadow-gray-600 rounded-lg">
-              <div className="px-6 pb-3">
+            <div key={repo.id} className="dark:bg-gray-800 bg-gray-700 text-white shadow-md shadow-gray-600 rounded-lg">
+              <div className="px-6 py-3">
                 <p>Title: <span className='font-bold'>{repo.name}</span></p>
                 <p className="text-gray-400">{repo.description}</p>
                 <div className="flex items-center justify-center mt-4">
                   <button className="w-1/2 px-6 pt-3 m-3 duration-200 hover:scale-105">
-                    <a href={repo.html_url} target='_blank' rel='noreferrer'>View Repo</a>
+                    <a href={repo.html_url} target='_blank' rel='noreferrer' className='text-blue-400'>View Repo</a>
                   </button>
                 </div>
               </div>
