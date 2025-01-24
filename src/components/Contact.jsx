@@ -35,7 +35,7 @@ const Contact = () => {
   };
 
   return (
-    <div name="contact" className='w-full dark:bg-gray-900 dark:text-white'>
+    <div name="contact" className='w-full dark:bg-gray-900 dark:text-white min-h-screen'>
       <div className='flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full'>
         <div className='pb-8'>
           <h2 className='text-4xl font-bold inline'>Contact</h2>
