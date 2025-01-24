@@ -114,7 +114,7 @@ const Portfolio = () => {
   }, []); // Empty dependency array ensures the effect runs only once
 
   return (
-    <div name="portfolio" className="dark:bg-gray-900 dark:text-white w-full h-screen">
+    <div name="portfolio" className="dark:bg-gray-900 dark:text-white w-full min-h-screen">
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
           <h2 className="text-4xl font-bold inline">Portfolio</h2>
