@@ -2,7 +2,7 @@ import React from 'react';
 
 const TestimonialCard = ({ name, photo, quote }) => {
   return (
-    <div className="max-w-sm mx-auto bg-gray-800 dark:bg-gray-800 text-white dark:text-white shadow-md rounded-lg p-6 transition-all duration-300 ease-in-out transform hover:scale-105">
+    <div className="max-w-sm mx-auto bg-gray-800 dark:bg-gray-800 text-white dark:text-white shadow-md rounded-lg p-6 transition-all duration-300 ease-in-out transform h-64">
       <img
         src={photo}
         alt={name}

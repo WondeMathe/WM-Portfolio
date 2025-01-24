@@ -5,7 +5,7 @@ import SkillCard from "./components/SkillCard";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { useState, useEffect } from "react"; // Make sure to import useState
+import { useState, useEffect } from "react";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div>
-      <Header darkMode={darkMode} setDarkMode={setDarkMode} /> {/* Make sure these props are passed */}
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Routes>
         <Route path="/" element={<AboutSection />} />
         <Route path="/projects" element={<ProjectCard />} />

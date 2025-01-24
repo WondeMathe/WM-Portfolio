@@ -17,7 +17,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
     <div className={`flex justify-between items-center w-full h-20 px-4 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
       {/* Logo */}
       <div>
-        <h1 className="text-7xl font-signature ml-2 text-gray-800 dark:text-white">wm</h1>
+        <h1 className="text-7xl font-signature ml-2 text-gray-800 dark:text-white cursor-pointer">wm</h1>
       </div>
 
       {/* Links and Theme Toggle */}

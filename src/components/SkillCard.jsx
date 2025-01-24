@@ -116,7 +116,7 @@ const Experience = () => {
   return (
     <div
       name="experience"
-      className="dark:bg-gray-900 dark:text-white w-full"
+      className="dark:bg-gray-900 dark:text-white w-full h-screen"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div>
@@ -124,20 +124,20 @@ const Experience = () => {
           <p className="py-6">These are technologies I've worked with</p>
         </div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
-          {techs.map(({ id, src, title, proficiencyLevel, proficiency, style }) => (
+        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-0 xs:px-8 sm:px-0">
+          {techs.map(({ id, src, title, proficiency, style }) => (
             <div
               key={id}
-              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style} dark:hover:bg-slate-900 flex flex-col justify-between h-52`}
+              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style} dark:hover:bg-slate-900 flex flex-col justify-between h-44`}
             >
               {/* Image */}
               <img src={src} alt={title} className="w-20 h-20 mx-auto object-contain" />
               <div>
                 <p className="mt-2">{title}</p>
-                <p className="mt-2">
+                {/* <p className="mt-2">
                   Proficiency Level:{" "}
                   <span className="font-bold">{proficiencyLevel}</span>
-                </p>
+                </p> */}
               </div>
 
               {/* Progress Bar - Positioned at the bottom */}
