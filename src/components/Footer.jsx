@@ -29,7 +29,6 @@ const SocialLinks = () => {
 
   return (
     <div className="flex flex-col dark:bg-gray-900 dark:text-white bg-gray-100 text-gray-900 p-8">
-      {/* Social Links Section */}
       <div className="flex justify-center space-x-6 mb-8">
         {links.map(({ id, child, href }) => (
           <a key={id} href={href} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-lg hover:text-blue-500 transition-all duration-300 ease-in-out">
@@ -38,7 +37,6 @@ const SocialLinks = () => {
         ))}
       </div>
 
-      {/* Footer Text Section */}
       <div className="text-center text-sm text-gray-600 dark:text-gray-300">
         <p>© 2025 Wondwosen Mathewos. All Rights Reserved.</p>
       </div>

@@ -19,14 +19,13 @@ const Header = ({ darkMode, setDarkMode }) => {
         darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
       }`}
     >
-      {/* Logo */}
+
       <div>
         <h1 className="text-7xl font-signature ml-2 text-gray-800 dark:text-white cursor-pointer">
           wm
         </h1>
       </div>
 
-      {/* Links and Theme Toggle */}
       <div className="hidden md:flex items-center space-x-6">
         {/* Links */}
         <ul className="flex space-x-6">
@@ -61,7 +60,6 @@ const Header = ({ darkMode, setDarkMode }) => {
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
 
-      {/* Mobile Menu */}
       {nav && (
         <ul
           className={`flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen ${
@@ -88,7 +86,7 @@ const Header = ({ darkMode, setDarkMode }) => {
               </NavLink>
             </li>
           ))}
-          {/* Add ThemeToggle to Mobile Menu */}
+          {/* ThemeToggle for Mobile Menu */}
           <li className="mt-6">
             <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
           </li>

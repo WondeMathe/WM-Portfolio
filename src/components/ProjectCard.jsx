@@ -99,8 +99,8 @@ const Portfolio = () => {
       project.id === id
         ? {
             ...project,
-            liked: !project.liked, // Toggle the like status
-            likes: project.liked ? project.likes - 1 : project.likes + 1, // Increment or decrement likes
+            liked: !project.liked,
+            likes: project.liked ? project.likes - 1 : project.likes + 1,
           }
         : project
     );
@@ -129,7 +129,7 @@ const Portfolio = () => {
     };
 
     fetchRepos();
-  }, []); // Empty dependency array ensures the effect runs only once
+  }, []); // To ensure the effect runs only once
 
   return (
     <div
