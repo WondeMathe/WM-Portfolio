@@ -4,7 +4,7 @@ import { FaSun, FaMoon } from "react-icons/fa";
 const ThemeToggle = ({ darkMode, setDarkMode }) => {
   return (
     <div
-      onClick={() => setDarkMode(!darkMode)} // Toggling the theme
+      onClick={() => setDarkMode(!darkMode)}
       className="cursor-pointer text-xl"
     >
       {darkMode ? (

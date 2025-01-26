@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ThemeToggle from "./ThemeToggle"; // Import the ThemeToggle component
+import ThemeToggle from "./ThemeToggle";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const NavBar = ({ darkMode, setDarkMode }) => {
+const Header = ({ darkMode, setDarkMode }) => {
   const [nav, setNav] = useState(false);
 
   const links = [
@@ -14,10 +14,16 @@ const NavBar = ({ darkMode, setDarkMode }) => {
   ];
 
   return (
-    <div className={`flex justify-between items-center w-full h-20 px-4 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+    <div
+      className={`flex justify-between items-center w-full h-20 px-4 ${
+        darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+      }`}
+    >
       {/* Logo */}
       <div>
-        <h1 className="text-7xl font-signature ml-2 text-gray-800 dark:text-white cursor-pointer">wm</h1>
+        <h1 className="text-7xl font-signature ml-2 text-gray-800 dark:text-white cursor-pointer">
+          wm
+        </h1>
       </div>
 
       {/* Links and Theme Toggle */}
@@ -25,8 +31,20 @@ const NavBar = ({ darkMode, setDarkMode }) => {
         {/* Links */}
         <ul className="flex space-x-6">
           {links.map(({ id, link, text }) => (
-            <li key={id} className="cursor-pointer capitalize font-medium hover:text-blue-500 hover:scale-105 duration-200">
-              <Link to={link}>{text}</Link>
+            <li
+              key={id}
+              className="text-xl cursor-pointer capitalize font-medium duration-200"
+            >
+              <NavLink
+                to={link}
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-blue-700 dark:text-blue-400 scale-125"
+                    : "hover:text-blue-400 dark:hover:text-blue-300 hover:scale-105"
+                }
+              >
+                {text}
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -36,18 +54,38 @@ const NavBar = ({ darkMode, setDarkMode }) => {
       </div>
 
       {/* Mobile Menu Icon */}
-      <div onClick={() => setNav(!nav)} className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden">
+      <div
+        onClick={() => setNav(!nav)}
+        className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
+      >
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
 
       {/* Mobile Menu */}
       {nav && (
-        <ul className={`flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+        <ul
+          className={`flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen ${
+            darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"
+          }`}
+        >
           {links.map(({ id, link, text }) => (
-            <li key={id} className="px-4 cursor-pointer capitalize py-6 text-4xl">
-              <Link onClick={() => setNav(!nav)} to={link}>
+            <li
+              key={id}
+              className="px-4 cursor-pointer capitalize py-6 text-4xl"
+            >
+              <NavLink
+                onClick={() => setNav(!nav)}
+                to={link}
+                className={({ isActive }) =>
+                  `text-4xl px-4 cursor-pointer capitalize py-6 ${
+                    isActive
+                      ? "text-orange-400 font-bold"
+                      : "hover:text-orange-400"
+                  }`
+                }
+              >
                 {text}
-              </Link>
+              </NavLink>
             </li>
           ))}
           {/* Add ThemeToggle to Mobile Menu */}
@@ -60,4 +98,4 @@ const NavBar = ({ darkMode, setDarkMode }) => {
   );
 };
 
-export default NavBar;
+export default Header;

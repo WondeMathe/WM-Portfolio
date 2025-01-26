@@ -9,10 +9,8 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Clear previous errors
     setError('');
 
-    // Validate inputs
     if (!name || !email || !message) {
       setError('All fields are required.');
       return;
@@ -30,8 +28,7 @@ const Contact = () => {
       return;
     }
 
-    // If validation passes, let the form submit to Getform.io
-    e.target.submit();  // Submit the form manually
+    e.target.submit();
   };
 
   return (
@@ -39,7 +36,10 @@ const Contact = () => {
       <div className='flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full'>
         <div className='pb-8'>
           <h2 className='text-4xl font-bold inline'>Contact</h2>
-          <p className='py-6'>Submit the form below to get in touch with me</p>
+          <p className="text-xl py-6">
+            Whether you have a question, an opportunity, or just want to say hello, I'd love to hear from you! Submit the form below, 
+            and I'll get back to you as soon as possible.
+          </p>
         </div>
 
         <div className='flex justify-center items-center'>
@@ -55,8 +55,7 @@ const Contact = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder='Enter your name'
-              required
-              className='p-2 bg-transparent border-2 rounded-md text-gray-800 dark:text-white focus:outline-none'
+              className='p-2 bg-transparent border-2 border-gray-500 dark:border-gray-200 rounded-md text-gray-800 dark:text-white focus:outline-none'
             />
             <input
               type="email"
@@ -64,8 +63,7 @@ const Contact = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder='Enter your email'
-              required
-              className='my-4 p-2 bg-transparent border-2 rounded-md text-gray-800 dark:text-white focus:outline-none'
+              className='my-4 p-2 bg-transparent border-2 border-gray-500 dark:border-gray-200 rounded-md text-gray-800 dark:text-white focus:outline-none'
             />
             <textarea
               name="message"
@@ -73,9 +71,8 @@ const Contact = () => {
               onChange={(e) => setMessage(e.target.value)}
               rows="10"
               placeholder='Type a message...'
-              maxLength={500}
-              required
-              className='p-2 bg-transparent border-2 rounded-md text-gray-800 dark:text-white focus:outline-none'
+              // maxLength={500}
+              className='p-2 bg-transparent border-2 border-gray-500 dark:border-gray-200 rounded-md text-gray-800 dark:text-white focus:outline-none'
             ></textarea>
             
             {error && <p className="text-red-500 mt-2">{error}</p>}

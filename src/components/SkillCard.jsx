@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import css from "../assets/css.png";
 import github from "../assets/github.png";
@@ -13,7 +14,23 @@ import CSharp from "../assets/CSharp.png";
 import figma from "../assets/figma.png";
 import java from "../assets/java.png";
 
-const Experience = () => {
+// Motion framer variables
+const gridContainerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const gridCardVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
+const SkillCard = () => {
   const techs = [
     {
       id: 1,
@@ -121,17 +138,29 @@ const Experience = () => {
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div>
           <h2 className="text-4xl font-bold p-2 inline">Experience</h2>
-          <p className="py-6">These are technologies I've worked with</p>
+          <p className="text-xl py-6">
+            These are technologies I've worked with
+          </p>
         </div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-0 xs:px-8 sm:px-0">
+        <motion.div
+          variants={gridContainerVariants}
+          initial="hidden"
+          animate="show"
+          className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-0 xs:px-8 sm:px-0"
+        >
           {techs.map(({ id, src, title, proficiency, style }) => (
-            <div
-              key={id}
+            <motion.div
+            key={id}
+            variants={gridCardVariants}
               className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style} dark:hover:bg-slate-900 flex flex-col justify-between h-44`}
             >
               {/* Image */}
-              <img src={src} alt={title} className="w-20 h-20 mx-auto object-contain" />
+              <img
+                src={src}
+                alt={title}
+                className="w-20 h-20 mx-auto object-contain"
+              />
               <div>
                 <p className="mt-2">{title}</p>
                 {/* <p className="mt-2">
@@ -140,10 +169,10 @@ const Experience = () => {
                 </p> */}
               </div>
 
-              {/* Progress Bar - Positioned at the bottom */}
+              {/* Progress Bar */}
               <div className="w-3/4 mx-auto mt-2 bg-gray-300 rounded-full h-2">
-                <div
-                  className={`h-2 rounded-full ${style}`}
+                <motion.div
+                  className={`h-2 rounded-full`}
                   style={{
                     width: `${proficiency}%`,
                     backgroundColor:
@@ -155,14 +184,17 @@ const Experience = () => {
                         ? "orange"
                         : "red",
                   }}
-                ></div>
+                  initial={{width: "0%"}}
+                  animate={{width: `${proficiency}%`}}
+                  transition={{duration: 5, ease: 'easeInOut'}}
+                ></motion.div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 };
 
-export default Experience;
+export default SkillCard;
