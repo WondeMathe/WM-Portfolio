@@ -5,7 +5,6 @@ import SkillCard from "./components/SkillCard";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import pageNotFound from "./components/PageNotFound"
 import { useState, useEffect } from "react";
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
         <Route path="/projects" element={<ProjectCard />} />
         <Route path="/experience" element={<SkillCard />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<pageNotFound />}></Route>
       </Routes>
       <Footer />
     </div>
