@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import HeroImage from "../assets/pictures/heroImage.jpeg";
 import TestimonialCard from "./TestimonialCard";
 import ImageYoni from "../assets/pictures/profile_Yoni.jpg";
+import ImageNaomi from "../assets/pictures/profile_Naomi.jpg";
 
 // Import Swiper React components and styles
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -41,8 +42,7 @@ const AboutSection = () => {
     },
     {
       name: "Naomi Zerfu",
-      photo:
-        "https://media.licdn.com/dms/image/v2/D4D03AQEtnLpJ3hu6Uw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728896438386?e=1742428800&v=beta&t=AqCTCN-4h5xa5-_63qz9eaCrTOQwnGivA2UbzCQzHMI",
+      photo: ImageNaomi,
       quote:
         "I highly recommend Wondwosen for any web development project. His creativity and professionalism are unmatched.",
     },

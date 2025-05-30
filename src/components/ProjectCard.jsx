@@ -5,6 +5,7 @@ import project2 from "../assets/portfolio/project2.jpg";
 import project3 from "../assets/portfolio/project3.jpg";
 import project4 from "../assets/portfolio/project4.jpg";
 import project5 from "../assets/portfolio/project5.png";
+import project6 from "../assets/portfolio/project6.png";
 
 // Motion framer variables
 const gridContainerVariants = {
@@ -32,10 +33,10 @@ const Portfolio = () => {
           {
             id: 1,
             src: project1,
-            alt: "Guess number game",
-            demo: "https://guessing-game-wm.netlify.app/",
+            alt: "Number Guessing Game",
+            demo: "https://mindmatchgame.netlify.app/",
             codeLink:
-              "https://github.com/WondeMathe/HTML-CSS-JS/tree/master/Simple%20game%20in%20HTML%20CSS%2C%20JavaScript",
+              "https://github.com/WondeMathe/HTML-CSS-JS/tree/master/Number%20Guessing%20Game",
             projectTitle: "Guessing Game",
             likes: 0,
             liked: false,
@@ -82,11 +83,11 @@ const Portfolio = () => {
           },
           {
             id: 6,
-            src: project2,
-            alt: "Guess number game",
+            src: project6,
+            alt: "Online Exam System",
             demo: "",
             codeLink: "",
-            projectTitle: "Guessing Game",
+            projectTitle: "Online Exam System",
             likes: 0,
             liked: false,
           },
