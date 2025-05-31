@@ -1,3 +1,5 @@
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow: /private-path/  # Optional: restrict specific paths
+Disallow:
+
 Sitemap: https://wmmportfolio.netlify.app/sitemap.xml
